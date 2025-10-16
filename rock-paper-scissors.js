@@ -15,6 +15,8 @@ function setup(){
       // Tells the game we wanna start with 5 rounds
       playGame(5);
    })
+
+   console.log('Setup done', gameState)
 }
 
 function getComputerChoice() {
