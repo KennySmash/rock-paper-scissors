@@ -34,9 +34,9 @@ function getComputerChoice() {
 function getHumanChoice() {
    let choice = prompt("Whats your choice?");
 
-   if (["rock", "r"].includes(humanChoice)) return "rock";
-   if (["paper", "p"].includes(humanChoice)) return "paper";
-   if (["scissors", "s"].includes(humanChoice)) return "scissors";
+   if (["rock", "r"].includes(choice)) return "rock";
+   if (["paper", "p"].includes(choice)) return "paper";
+   if (["scissors", "s"].includes(choice)) return "scissors";
 
    return null;
 }
@@ -117,3 +117,6 @@ function playGame(rounds) {
    gameState.computerScore = 0;
 }
 
+
+// running setup once to get it all up
+setup();
