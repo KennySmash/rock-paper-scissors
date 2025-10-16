@@ -42,29 +42,29 @@ function getHumanChoice() {
 }
 
 // all this does is work out the game text
-function evaluateRound(human, comp, callback) {
+function evaluateRound(human, comp) {
    switch (human) {
       case "rock":
-         if (computerChoice === "scissors") {
+         if (comp === "scissors") {
             return "You win! Rock beats Scissors.";
-         } else if (computerChoice === "paper") {
+         } else if (comp === "paper") {
             return "You lose Paper beats Rock!";
          } else {
             return " It is a tie!"
          }
 
       case "paper":
-         if (computerChoice === "rock") {
+         if (comp === "rock") {
             return "You win! Paper beats Rock.";
-         } else if (computerChoice === "scissors") {
+         } else if (comp === "scissors") {
             return "You lose Scissors beats Paper!";
          } else {
             return " It is a tie!"
          }
       case "scissors":
-         if (computerChoice === "paper") {
+         if (comp === "paper") {
             return "You win! Rock beats Scissors.";
-         } else if (computerChoice === "rock") {
+         } else if (comp === "rock") {
             return "You lose Rock beats Scissors!";
          } else {
             return " It is a tie!"
@@ -91,16 +91,16 @@ function playGame(rounds) {
       let result = evaluateRound(humanSelection, computerSelection)
       
       // run the result though a compare so we can add to the scores
-      if (result.contains("You win")){
+      if (result.includes("You win")){
          gameState.humanScore =+ 1;
-      } else if (result.contains("You lose")) {
+      } else if (result.includes("You lose")) {
          gameState.compScore =+ 1;
       }
 
       // logging this single round
       console.log({ 
          "humanScore": gameState.humanScore, 
-         "Comp": cgameState.compScore, 
+         "Comp": gameState.compScore, 
          "MyHand": humanSelection, 
          "TheirHand": computerSelection 
       }); 
